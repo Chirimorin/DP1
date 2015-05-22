@@ -22,7 +22,6 @@ namespace FullAdder.Model
                 this.value = value;
 
                 MainController.Instance.ViewModel.NotifyPropertyChanged(); 
-                MainController.Instance.ViewModel.logOutput();
             }
         }
 

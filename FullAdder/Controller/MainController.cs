@@ -28,6 +28,7 @@ namespace FullAdder.Controller
 
         private Circuit currentCircuit;
         public MainWindowViewModel ViewModel { get; set; }
+        public MainWindow MainWindow { get; set; }
 
         public MainController(MainWindow view)
         {
@@ -36,6 +37,7 @@ namespace FullAdder.Controller
 
             ViewModel = new MainWindowViewModel();
             view.DataContext = ViewModel;
+            MainWindow = view;
 
             currentCircuit = FileService.ReadFile(Directory.GetCurrentDirectory() + @"\Circuits\FullAdder.txt");
             ViewModel.NotifyPropertyChanged();

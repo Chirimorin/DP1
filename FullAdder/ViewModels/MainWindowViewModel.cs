@@ -1,4 +1,5 @@
-﻿using FullAdder.Model;
+﻿using FullAdder.Controller;
+using FullAdder.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FullAdder.ViewModels
 {
-    public class MainWindowViewModel : INotifyPropertyChanged
+    public class MainWindowViewModel
     {
         private List<InputNode> inputs;
         public List<InputNode> Inputs
@@ -55,20 +56,10 @@ namespace FullAdder.ViewModels
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public void NotifyPropertyChanged()
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-            {
-                Console.WriteLine("firing PropertyChanged");
-                handler(this, new PropertyChangedEventArgs("Outputs"));
-            }
-            else
-            {
-                Console.WriteLine("PropertyChanged is null");
-            }
+            MainController.Instance.MainWindow.DataContext = null;
+            MainController.Instance.MainWindow.DataContext = this;
         }
 
     }

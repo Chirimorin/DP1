@@ -21,8 +21,8 @@
         <ListBox Name="Outputs" ItemsSource="{Binding Outputs, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <CheckBox Name="Checkbox" Content="{Binding Name}" 
-                              Tag="{Binding Value}" IsChecked="{Binding Value}" />
+                    <CheckBox Name="Checkbox" Content="{Binding Name, UpdateSourceTrigger=PropertyChanged}" 
+                              IsChecked="{Binding Value, UpdateSourceTrigger=PropertyChanged}" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
