@@ -27,21 +27,46 @@ namespace FullAdder.Controller
         }
 
         private Circuit currentCircuit;
-        public MainWindowViewModel ViewModel { get; set; }
         public MainWindow MainWindow { get; set; }
 
         public MainController(MainWindow view)
         {
+            MainWindowViewModel.Instance.Status = "Loading...";
+
             Instance = this;
             NodeFactory.init();
 
-            ViewModel = new MainWindowViewModel();
-            view.DataContext = ViewModel;
+            view.DataContext = MainWindowViewModel.Instance;
             MainWindow = view;
 
             currentCircuit = FileService.ReadFile(Directory.GetCurrentDirectory() + @"\Circuits\FullAdder.txt");
-            ViewModel.NotifyPropertyChanged();
-            ViewModel.logOutput();
+            MainWindowViewModel.Instance.NotifyPropertyChanged();
+
+            MainWindowViewModel.Instance.Status = "Done";
+        }
+
+        public void OpenFile(string path)
+        {
+            try
+            {
+                MainWindowViewModel viewModel = MainWindowViewModel.Instance;
+
+                viewModel.Status = "Opening file: " + path;
+
+                viewModel.ResetNodes();
+                currentCircuit = FileService.ReadFile(path);
+                viewModel.NotifyPropertyChanged();
+
+                viewModel.Status = "Done";
+            }
+            catch (FileNotFoundException e)
+            {
+                MainWindowViewModel.Instance.Status = "Circuit file not found! (" + e.FileName + ")";
+            }
+            catch (Exception e)
+            {
+                MainWindowViewModel.Instance.Status = "Could not load circuit: " + e.Message;
+            }
         }
     }
 }

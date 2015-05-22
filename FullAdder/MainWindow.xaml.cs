@@ -1,4 +1,6 @@
 ﻿using FullAdder.Controller;
+using FullAdder.ViewModels;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,8 +28,26 @@ namespace FullAdder
         public MainWindow()
         {
             InitializeComponent();
-
             mainController = new MainController(this);
+        }
+
+        private void OpenFile_Click(object sender, RoutedEventArgs e)
+        {
+            // Create OpenFileDialog 
+            OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            // Set filter for file extension and default file extension 
+            dlg.DefaultExt = ".txt";
+            dlg.Filter = "Circuit Files (*.txt)|*.txt";
+
+            // Display OpenFileDialog by calling ShowDialog method 
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Get the selected file name and display in a TextBox 
+            if (result == true)
+            {
+                MainController.Instance.OpenFile(dlg.FileName);
+            }
         }
     }
 }

@@ -9,8 +9,33 @@ using System.Threading.Tasks;
 
 namespace FullAdder.ViewModels
 {
-    public class MainWindowViewModel
+    public class MainWindowViewModel : INotifyPropertyChanged
     {
+        private static MainWindowViewModel instance;
+        public static MainWindowViewModel Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new MainWindowViewModel();
+                return instance;
+            }
+        }
+
+        private string status;
+        public string Status
+        {
+            get
+            {
+                return status;
+            }
+            set
+            {
+                status = value;
+                NotifyPropertyChanged("Status");
+            }
+        }
+
         private List<InputNode> inputs;
         public List<InputNode> Inputs
         {
@@ -19,6 +44,10 @@ namespace FullAdder.ViewModels
                 if (inputs == null)
                     inputs = new List<InputNode>();
                 return inputs;
+            }
+            private set
+            {
+                inputs = value;
             }
         }
 
@@ -36,6 +65,10 @@ namespace FullAdder.ViewModels
                     outputs = new List<OutputNode>();
                 return outputs;
             }
+            private set
+            {
+                outputs = value;
+            }
         }
 
         public void RegisterOutput(OutputNode output)
@@ -43,17 +76,10 @@ namespace FullAdder.ViewModels
             Outputs.Add(output);
         }
 
-        public void logOutput()
+        public void ResetNodes()
         {
-            foreach(InputNode input in Inputs)
-            {
-                Console.WriteLine("Input " + input.Name + ": " + input.Value);
-            }
-
-            foreach (OutputNode output in Outputs)
-            {
-                Console.WriteLine("Output " + output.Name + ": " + output.Value);
-            }
+            Inputs = null;
+            Outputs = null;
         }
 
         public void NotifyPropertyChanged()
@@ -62,5 +88,11 @@ namespace FullAdder.ViewModels
             MainController.Instance.MainWindow.DataContext = this;
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void NotifyPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

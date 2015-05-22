@@ -1,5 +1,6 @@
 ﻿using FullAdder.Controller;
 using FullAdder.Factory;
+using FullAdder.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace FullAdder.Model
             {
                 this.value = value;
 
-                MainController.Instance.ViewModel.NotifyPropertyChanged(); 
+                MainWindowViewModel.Instance.NotifyPropertyChanged(); 
             }
         }
 
@@ -29,7 +30,7 @@ namespace FullAdder.Model
         {
             maxInputs = 1;
 
-            MainController.Instance.ViewModel.RegisterInput(this);
+            MainWindowViewModel.Instance.RegisterInput(this);
         }
     }
 

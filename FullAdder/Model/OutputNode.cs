@@ -1,5 +1,6 @@
 ﻿using FullAdder.Controller;
 using FullAdder.Factory;
+using FullAdder.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace FullAdder.Model
         {
             maxInputs = 1;
 
-            MainController.Instance.ViewModel.RegisterOutput(this);
+            MainWindowViewModel.Instance.RegisterOutput(this);
         }
 
         public static void registerSelf()
