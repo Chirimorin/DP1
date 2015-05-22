@@ -5,28 +5,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullAdder.Model
+namespace FullAdder.OldModel
 {
-    public class OrGate : LogicGate
+    public class NAndGate : Node
     {
         public static void registerSelf()
         {
-            GateFactory.registerGate("OR", typeof(OrGate));
+            NodeFactory.registerNode("NAND", typeof(NAndGate));
         }
 
-        public OrGate()
+        public NAndGate()
+            : base()
         {
             numInputs = 2;
         }
 
-        override protected void calculateOutput()
+        override
+        protected void calculateOutput()
         {
             if (numInputs != currentInput)
             {
                 throw new Exception("Niet genoeg inputs");
             }
 
-            bool output = (bool)inputs[0] || (bool)inputs[1];
+            bool output = !((bool)inputs[0] && (bool)inputs[1]);
 
             broadcastOutput(output);
         }

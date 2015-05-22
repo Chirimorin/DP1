@@ -1,4 +1,5 @@
-﻿using FullAdder.Factory;
+﻿using FullAdder.Controller;
+using FullAdder.Factory;
 using FullAdder.Model;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace FullAdder.Services
 {
     public abstract class FileService
     {
-        public static async Task<Circuit> ReadFile(string path)
+        public static Circuit ReadFile(string path)
         {
             if (!File.Exists(path))
             {
@@ -49,12 +50,49 @@ namespace FullAdder.Services
                             throw new Exception("Error on line " + lineNumber + ", expected 1 ':' got " + (splitLine.Length - 1) + ".");
                         }
 
-                        
+
+                        output = processNode(output, splitLine[0], splitLine[1]);
+
+
                     }
                 }
             }
 
+            MainController.Instance.onInput();
+
             return output;
+        }
+
+        private static Circuit processNode(Circuit circuit, string nodeName, string parameter)
+        {
+            if (circuit.hasNode(nodeName))
+            {
+                // Node exists, so this should add outputs
+                string[] nodes = parameter.Split(',');
+
+                Node currentNode = circuit.getNode(nodeName);
+
+                foreach(string node in nodes)
+                {
+                    if (!circuit.hasNode(node))
+                    {
+                        throw new Exception("Node \"" + node + "\" bestaaat niet!");
+                    }
+                    else
+                    {
+                        circuit.getNode(node).addInput(currentNode);
+                        //currentNode.Outputs.Add(circuit.getNode(node));
+                    }
+                }
+                
+            }
+            else
+            {
+                // Create node.
+                circuit.addNode(nodeName, NodeFactory.createNode(parameter));
+            }
+
+            return circuit;
         }
     }
 }

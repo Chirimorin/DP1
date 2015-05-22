@@ -5,16 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullAdder.Model
+namespace FullAdder.OldModel
 {
-    public class NOrGate : LogicGate
+    public class XOrGate : Node
     {
         public static void registerSelf()
         {
-            GateFactory.registerGate("NOR", typeof(NOrGate));
+            NodeFactory.registerNode("XOR", typeof(XOrGate));
         }
 
-        public NOrGate()
+        public XOrGate()
+            : base()
         {
             numInputs = 2;
         }
@@ -26,7 +27,7 @@ namespace FullAdder.Model
                 throw new Exception("Niet genoeg inputs");
             }
 
-            bool output = !((bool)inputs[0] || (bool)inputs[1]);
+            bool output = (bool)inputs[0] ^ (bool)inputs[1];
 
             broadcastOutput(output);
         }

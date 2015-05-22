@@ -1,28 +1,42 @@
-﻿using System;
+﻿using FullAdder.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullAdder.Model
+namespace FullAdder.OldModel
 {
-    public abstract class LogicGate : IOutput
+    public abstract class Node
     {
+        public string Name { get; set; }
+
         protected bool?[] inputs;
         protected int numInputs;
         protected int currentInput;
 
-        protected List<IOutput> outputs;
-        public List<IOutput> Outputs
+        protected List<Node> outputs;
+        public List<Node> Outputs
         {
             get
             {
                 if (outputs == null)
                 {
-                    outputs = new List<IOutput>();
+                    outputs = new List<Node>();
                 }
                 return outputs;
             }
+        }
+
+        public Node()
+        {
+            
+        }
+
+        private void OnReset(object source, EventArgs e)
+        {
+            inputs = new bool?[numInputs];
+            currentInput = 0;
         }
 
         public void addInput(bool input)
@@ -33,6 +47,10 @@ namespace FullAdder.Model
             }
             else
             {
+                if (inputs == null)
+                {
+                    inputs = new bool?[numInputs];
+                }
                 inputs[currentInput] = input;
                 currentInput++;
             }
@@ -47,21 +65,9 @@ namespace FullAdder.Model
 
         protected void broadcastOutput(bool value)
         {
-            foreach (IOutput output in outputs)
+            foreach (Node output in Outputs)
             {
                 output.addInput(value);
-            }
-
-        }
-
-        public void reset()
-        {
-            inputs = new bool?[numInputs];
-            currentInput = 0;
-
-            foreach (IOutput output in outputs)
-            {
-                output.reset();
             }
         }
     }

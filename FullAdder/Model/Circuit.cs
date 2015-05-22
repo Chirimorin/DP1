@@ -8,61 +8,35 @@ namespace FullAdder.Model
 {
     public class Circuit
     {
-        private List<KeyValuePair<string, Input>> inputs;
-        public List<KeyValuePair<string, Input>> Inputs 
-        { 
-            get 
-            {
-                if (inputs == null)
-                {
-                    inputs = new List<KeyValuePair<string, Input>>();
-                }
-
-                return inputs;
-            } 
-        }
-
-        public void addInput(string name, Input input)
-        {
-            Inputs.Add(new KeyValuePair<string, Input>(name, input));
-        }
-
-        private List<Output> outputs;
-        public List<Output> Outputs
+        private List<KeyValuePair<string, Node>> nodes;
+        public List<KeyValuePair<string, Node>> Nodes
         {
             get
             {
-                if (outputs == null)
+                if (nodes == null)
                 {
-                    outputs = new List<Output>();
+                    nodes = new List<KeyValuePair<string, Node>>();
                 }
 
-                return outputs;
+                return nodes;
             }
         }
 
-        private List<KeyValuePair<string, LogicGate>> logicGates;
-        public List<KeyValuePair<string, LogicGate>> LogicGates
+        public void addNode(string name, Node gate)
         {
-            get
-            {
-                if (logicGates == null)
-                {
-                    logicGates = new List<KeyValuePair<string, LogicGate>>();
-                }
-
-                return logicGates;
-            }
+            Console.WriteLine("Added node: " + name);
+            gate.Name = name;
+            Nodes.Add(new KeyValuePair<string, Node>(name, gate));
         }
 
-        public void addLogicGate(string name, LogicGate gate)
+        public Node getNode(string name)
         {
-            LogicGates.Add(new KeyValuePair<string, LogicGate>(name, gate));
+            return Nodes.Where(n => n.Key == name).FirstOrDefault().Value;
         }
 
-        public LogicGate getLogicGate(string name)
+        public bool hasNode(string name)
         {
-            return LogicGates.Where(g => g.Key == name).FirstOrDefault().Value;
+            return Nodes.Where(n => n.Key == name).Any();
         }
     }
 }

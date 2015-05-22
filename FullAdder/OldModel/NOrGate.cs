@@ -5,29 +5,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullAdder.Model
+namespace FullAdder.OldModel
 {
-    public class AndGate : LogicGate
+    public class NOrGate : Node
     {
         public static void registerSelf()
         {
-            GateFactory.registerGate("AND", typeof(AndGate));
+            NodeFactory.registerNode("NOR", typeof(NOrGate));
         }
 
-        public AndGate()
+        public NOrGate()
+            : base()
         {
             numInputs = 2;
         }
 
-        override
-        protected void calculateOutput()
+        override protected void calculateOutput()
         {
             if (numInputs != currentInput)
             {
                 throw new Exception("Niet genoeg inputs");
             }
 
-            bool output = (bool)inputs[0] && (bool)inputs[1];
+            bool output = !((bool)inputs[0] || (bool)inputs[1]);
 
             broadcastOutput(output);
         }

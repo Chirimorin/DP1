@@ -5,28 +5,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullAdder.Model
+namespace FullAdder.OldModel
 {
-    public class XOrGate : LogicGate
+    public class AndGate : Node
     {
         public static void registerSelf()
         {
-            GateFactory.registerGate("XOR", typeof(XOrGate));
+            NodeFactory.registerNode("AND", typeof(AndGate));
         }
 
-        public XOrGate()
+        public AndGate()
+            : base()
         {
             numInputs = 2;
         }
 
-        override protected void calculateOutput()
+        override
+        protected void calculateOutput()
         {
             if (numInputs != currentInput)
             {
                 throw new Exception("Niet genoeg inputs");
             }
 
-            bool output = (bool)inputs[0] ^ (bool)inputs[1];
+            bool output = (bool)inputs[0] && (bool)inputs[1];
 
             broadcastOutput(output);
         }
