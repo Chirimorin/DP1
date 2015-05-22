@@ -24,7 +24,6 @@ namespace FullAdder.Model
 
         public void addNode(string name, Node gate)
         {
-            Console.WriteLine("Added node: " + name);
             gate.Name = name;
             Nodes.Add(new KeyValuePair<string, Node>(name, gate));
         }

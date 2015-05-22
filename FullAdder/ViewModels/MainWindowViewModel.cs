@@ -1,16 +1,17 @@
 ﻿using FullAdder.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FullAdder.ViewModels
 {
-    public class MainWindowViewModel
+    public class MainWindowViewModel : INotifyPropertyChanged
     {
         private List<InputNode> inputs;
-        private List<InputNode> Inputs
+        public List<InputNode> Inputs
         {
             get
             {
@@ -26,7 +27,7 @@ namespace FullAdder.ViewModels
         }
 
         private List<OutputNode> outputs;
-        private List<OutputNode> Outputs
+        public List<OutputNode> Outputs
         {
             get
             {
@@ -53,5 +54,22 @@ namespace FullAdder.ViewModels
                 Console.WriteLine("Output " + output.Name + ": " + output.Value);
             }
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void NotifyPropertyChanged()
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                Console.WriteLine("firing PropertyChanged");
+                handler(this, new PropertyChangedEventArgs("Outputs"));
+            }
+            else
+            {
+                Console.WriteLine("PropertyChanged is null");
+            }
+        }
+
     }
 }

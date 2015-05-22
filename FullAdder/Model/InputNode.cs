@@ -20,6 +20,9 @@ namespace FullAdder.Model
             set
             {
                 this.value = value;
+
+                MainController.Instance.ViewModel.NotifyPropertyChanged(); 
+                MainController.Instance.ViewModel.logOutput();
             }
         }
 

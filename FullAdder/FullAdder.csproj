@@ -55,14 +55,14 @@
     </ApplicationDefinition>
     <Compile Include="Model\AndNode.cs" />
     <Compile Include="Model\InputNode.cs" />
+    <Compile Include="Model\NAndNode.cs" />
     <Compile Include="Model\Node.cs" />
+    <Compile Include="Model\NOrNode.cs" />
     <Compile Include="Model\NotNode.cs" />
     <Compile Include="Model\OrNode.cs" />
     <Compile Include="Model\OutputNode.cs" />
     <Compile Include="Model\Circuit.cs" />
-    <Compile Include="OldModel\Input.cs" />
-    <Compile Include="OldModel\Node.cs" />
-    <Compile Include="OldModel\Output.cs" />
+    <Compile Include="Model\XOrNode.cs" />
     <Compile Include="Services\FileService.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Page Include="MainWindow.xaml">
@@ -81,12 +81,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OldModel\AndGate.cs" />
-    <Compile Include="OldModel\NAndGate.cs" />
-    <Compile Include="OldModel\NOrGate.cs" />
-    <Compile Include="OldModel\NotGate.cs" />
-    <Compile Include="OldModel\OrGate.cs" />
-    <Compile Include="OldModel\XOrGate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

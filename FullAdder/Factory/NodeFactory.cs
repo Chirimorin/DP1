@@ -42,11 +42,11 @@ namespace FullAdder.Factory
                 nodes = new Dictionary<string,Type>();
 
                 AndNode.registerSelf();
-                //NAndGate.registerSelf();
+                NAndNode.registerSelf();
                 NotNode.registerSelf();
-                //NOrGate.registerSelf();
+                NOrNode.registerSelf();
                 OrNode.registerSelf();
-                //XOrGate.registerSelf();
+                XOrNode.registerSelf();
                 InputHigh.registerSelf();
                 InputLow.registerSelf();
                 OutputNode.registerSelf();

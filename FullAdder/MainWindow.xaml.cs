@@ -1,5 +1,4 @@
 ﻿using FullAdder.Controller;
-using FullAdder.OldModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,23 +28,6 @@ namespace FullAdder
             InitializeComponent();
 
             mainController = new MainController(this);
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //_Cin.reset();
-            //_A.reset();
-            //_B.reset();
-
-            //_Cin.setInput((bool)Cin.IsChecked);
-            //_A.setInput((bool)A.IsChecked);
-            //_B.setInput((bool)B.IsChecked);
-
-
-            //Sum.IsChecked = _Sum.output;
-            //Cout.IsChecked = _Cout.output;
-            //Console.WriteLine("Sum: " + _Sum.output);
-            //Console.WriteLine("Cout: " + _Cout.output);
         }
     }
 }

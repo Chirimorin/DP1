@@ -34,7 +34,6 @@ namespace FullAdder.Services
                     if (!line.StartsWith("#") && !String.IsNullOrWhiteSpace(line))
                     {
                         line = Regex.Replace(line, @"\s+", "");
-                        Console.WriteLine(line);
 
                         if (!line.EndsWith(";"))
                         {
@@ -58,8 +57,6 @@ namespace FullAdder.Services
                 }
             }
 
-            MainController.Instance.onInput();
-
             return output;
         }
 
@@ -81,7 +78,6 @@ namespace FullAdder.Services
                     else
                     {
                         circuit.getNode(node).addInput(currentNode);
-                        //currentNode.Outputs.Add(circuit.getNode(node));
                     }
                 }
                 

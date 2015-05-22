@@ -11,8 +11,6 @@ using System.Threading.Tasks;
 
 namespace FullAdder.Controller
 {
-    public delegate void OnInputHandler(object source, EventArgs e);
-
     public class MainController
     {
         private static MainController instance;
@@ -28,8 +26,6 @@ namespace FullAdder.Controller
             }
         }
 
-        public event OnInputHandler OnInput;
-
         private Circuit currentCircuit;
         public MainWindowViewModel ViewModel { get; set; }
 
@@ -39,14 +35,11 @@ namespace FullAdder.Controller
             NodeFactory.init();
 
             ViewModel = new MainWindowViewModel();
+            view.DataContext = ViewModel;
 
             currentCircuit = FileService.ReadFile(Directory.GetCurrentDirectory() + @"\Circuits\FullAdder.txt");
+            ViewModel.NotifyPropertyChanged();
             ViewModel.logOutput();
-        }
-
-        public void onInput()
-        {
-            //OnInput(null, EventArgs.Empty);
         }
     }
 }
