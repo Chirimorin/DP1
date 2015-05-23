@@ -40,7 +40,7 @@ namespace FullAdder.Controller
             MainWindow = view;
 
             currentCircuit = FileService.ReadFile(Directory.GetCurrentDirectory() + @"\Circuits\FullAdder.txt");
-            MainWindowViewModel.Instance.NotifyPropertyChanged();
+            MainWindowViewModel.Instance.NotifyInputChanged();
 
             MainWindowViewModel.Instance.Status = "Done";
         }
@@ -55,7 +55,7 @@ namespace FullAdder.Controller
 
                 viewModel.ResetNodes();
                 currentCircuit = FileService.ReadFile(path);
-                viewModel.NotifyPropertyChanged();
+                viewModel.NotifyInputChanged();
 
                 viewModel.Status = "Done";
             }

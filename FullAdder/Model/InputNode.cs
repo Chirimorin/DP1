@@ -22,7 +22,7 @@ namespace FullAdder.Model
             {
                 this.value = value;
 
-                MainWindowViewModel.Instance.NotifyPropertyChanged(); 
+                MainWindowViewModel.Instance.NotifyInputChanged(); 
             }
         }
 

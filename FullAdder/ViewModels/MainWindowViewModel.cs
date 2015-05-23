@@ -2,6 +2,7 @@
 using FullAdder.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -36,13 +37,13 @@ namespace FullAdder.ViewModels
             }
         }
 
-        private List<InputNode> inputs;
-        public List<InputNode> Inputs
+        private ObservableCollection<InputNode> inputs;
+        public ObservableCollection<InputNode> Inputs
         {
             get
             {
                 if (inputs == null)
-                    inputs = new List<InputNode>();
+                    inputs = new ObservableCollection<InputNode>();
                 return inputs;
             }
             private set
@@ -56,13 +57,13 @@ namespace FullAdder.ViewModels
             Inputs.Add(input);
         }
 
-        private List<OutputNode> outputs;
-        public List<OutputNode> Outputs
+        private ObservableCollection<OutputNode> outputs;
+        public ObservableCollection<OutputNode> Outputs
         {
             get
             {
                 if (outputs == null)
-                    outputs = new List<OutputNode>();
+                    outputs = new ObservableCollection<OutputNode>();
                 return outputs;
             }
             private set
@@ -82,10 +83,10 @@ namespace FullAdder.ViewModels
             Outputs = null;
         }
 
-        public void NotifyPropertyChanged()
+        public void NotifyInputChanged()
         {
-            MainController.Instance.MainWindow.DataContext = null;
-            MainController.Instance.MainWindow.DataContext = this;
+            NotifyPropertyChanged("Inputs");
+            NotifyPropertyChanged("Outputs");
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
