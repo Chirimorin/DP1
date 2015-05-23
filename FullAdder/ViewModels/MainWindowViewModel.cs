@@ -37,6 +37,20 @@ namespace FullAdder.ViewModels
             }
         }
 
+        private string windowTitle;
+        public string WindowTitle
+        {
+            get
+            {
+                return (String.IsNullOrEmpty(windowTitle) ? "" : windowTitle + " - ") + "Circuit Simulator";
+            }
+            set
+            {
+                windowTitle = value;
+                NotifyPropertyChanged("WindowTitle");
+            }
+        }
+
         private ObservableCollection<InputNode> inputs;
         public ObservableCollection<InputNode> Inputs
         {

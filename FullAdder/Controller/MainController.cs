@@ -39,9 +39,6 @@ namespace FullAdder.Controller
             view.DataContext = MainWindowViewModel.Instance;
             MainWindow = view;
 
-            currentCircuit = FileService.ReadFile(Directory.GetCurrentDirectory() + @"\Circuits\FullAdder.txt");
-            MainWindowViewModel.Instance.NotifyInputChanged();
-
             MainWindowViewModel.Instance.Status = "Done";
         }
 
@@ -52,12 +49,14 @@ namespace FullAdder.Controller
                 MainWindowViewModel viewModel = MainWindowViewModel.Instance;
 
                 viewModel.Status = "Opening file: " + path;
+                viewModel.WindowTitle = "";
 
                 viewModel.ResetNodes();
                 currentCircuit = FileService.ReadFile(path);
                 viewModel.NotifyInputChanged();
 
                 viewModel.Status = "Done";
+                viewModel.WindowTitle = path.Split('\\').LastOrDefault();
             }
             catch (FileNotFoundException e)
             {
