@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FullAdder.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,7 +48,10 @@ namespace FullAdder.Model
                 if (Inputs[i] != null)
                     result[i] = Inputs[i].Value;
                 else
+                {
                     result[i] = false;
+                    MainWindowViewModel.Instance.Status = "Niet alle verbindingen zijn aangesloten!";
+                }
             }
 
             return result;
