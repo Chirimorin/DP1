@@ -12,17 +12,6 @@ namespace FullAdder.Model
 {
     public class OutputNode : Node, INotifyPropertyChanged
     {
-        public override bool Value
-        {
-            get 
-            {
-                bool[] inputs = getInputs();
-
-                return inputs[0];
-            }
-            set { }
-        }
-
         public OutputNode()
         {
             maxInputs = 1;
@@ -31,21 +20,27 @@ namespace FullAdder.Model
             MainWindowViewModel.Instance.PropertyChanged += ViewModel_PropertyChanged;
         }
 
+        public override bool calculateInput()
+        {
+            bool[] inputs = getInputs();
+
+            return inputs[0];
+        }
+
         public static void registerSelf()
         {
             NodeFactory.registerNode("PROBE", typeof(OutputNode));
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// Listens to the PropertyChanged event from the ViewModel. 
         /// If the inputs changed, the Value of outputs change as well. 
         /// </summary>
         void ViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == "Inputs" && PropertyChanged != null)
+            if (e.PropertyName == "Outputs")
             {
-                PropertyChanged(this, new PropertyChangedEventArgs("Value"));
+                NotifyPropertyChanged("Value");
             }
         }
     }

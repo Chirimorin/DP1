@@ -3,6 +3,7 @@ using FullAdder.Factory;
 using FullAdder.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,12 +12,11 @@ namespace FullAdder.Model
 {
     public abstract class InputNode : Node
     {
-        private bool value;
-        public override bool Value
+        public override bool? Value
         {
             get 
             {
-                return value;
+                return (bool)value;
             }
             set
             {
@@ -28,9 +28,19 @@ namespace FullAdder.Model
 
         public InputNode()
         {
-            maxInputs = 1;
+            maxInputs = 0;
 
             MainWindowViewModel.Instance.RegisterInput(this);
+        }
+
+        protected override void Instance_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            // do nothing
+        }
+
+        public override bool calculateInput()
+        {
+            return (bool)Value;
         }
     }
 

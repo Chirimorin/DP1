@@ -24,7 +24,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <CheckBox Name="Checkbox" Content="{Binding Name}" 
-                              Tag="{Binding Value}" IsChecked="{Binding Value}" />
+                              IsChecked="{Binding Value}" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
@@ -32,7 +32,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <CheckBox Name="Checkbox" Content="{Binding Name}" 
-                              IsChecked="{Binding Value}" />
+                              IsEnabled="{Binding IsValid}" IsChecked="{Binding Value}" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

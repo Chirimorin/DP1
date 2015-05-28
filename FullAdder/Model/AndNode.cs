@@ -9,20 +9,16 @@ namespace FullAdder.Model
 {
     public class AndNode : Node
     {
-        public override bool Value
-        {
-            get 
-            {
-                bool[] inputs = getInputs();
-
-                return inputs[0] && inputs[1];
-            }
-            set { }
-        }
-
         public AndNode()
         {
             maxInputs = 2;
+        }
+
+        public override bool calculateInput()
+        {
+            bool[] inputs = getInputs();
+
+            return inputs[0] && inputs[1];
         }
 
         public static void registerSelf()

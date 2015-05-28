@@ -12,6 +12,11 @@ namespace FullAdder.Factory
         private static bool initialized = false;
         private static Dictionary<string, Type> nodes;
 
+        /// <summary>
+        /// Creates a node with the given name. These names are registered by the nodes themselves. 
+        /// </summary>
+        /// <param name="name">The name of the node</param>
+        /// <returns>The correct Node object.</returns>
         public static Node createNode(string name)
         {
             try
@@ -30,11 +35,19 @@ namespace FullAdder.Factory
             }
         }
 
+        /// <summary>
+        /// Registers a node type so it can be created by the factory. 
+        /// </summary>
+        /// <param name="name">The identifying name of the node</param>
+        /// <param name="type">The type of the node</param>
         public static void registerNode(string name, Type type) 
         {
             nodes.Add(name, type);
         }
 
+        /// <summary>
+        /// Initializes the factory. This should tell all nodes to register themselves. 
+        /// </summary>
         public static void init()
         {
             if (!initialized)

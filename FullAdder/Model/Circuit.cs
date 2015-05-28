@@ -37,5 +37,18 @@ namespace FullAdder.Model
         {
             return Nodes.Where(n => n.Key == name).Any();
         }
+
+        /// <summary>
+        /// Checks if the circuit is valid.  
+        /// In case of an error, an exception with the message is thrown. 
+        /// </summary>
+        /// <returns>true if the circuit is valid, nothing otherwise (exception thrown)</returns>
+        public bool checkCircuit()
+        {
+            
+
+
+            return true;
+        }
     }
 }

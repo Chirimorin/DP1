@@ -13,6 +13,11 @@ namespace FullAdder.Services
 {
     public abstract class FileService
     {
+        /// <summary>
+        /// Reads the given file and builds the corresponding circuit.
+        /// </summary>
+        /// <param name="path">The path to the file to read</param>
+        /// <returns>A circuit with all ndoes as described in the chosen file.</returns>
         public static Circuit ReadFile(string path)
         {
             if (!File.Exists(path))
@@ -31,16 +36,20 @@ namespace FullAdder.Services
                 {
                     lineNumber++;
 
+                    // Empty lines and comments should be ignored. 
                     if (!line.StartsWith("#") && !String.IsNullOrWhiteSpace(line))
                     {
+                        // Remove all whitespace
                         line = Regex.Replace(line, @"\s+", "");
 
                         if (!line.EndsWith(";"))
                         {
                             throw new Exception("Error on line " + lineNumber + ", Line does not end with ;.");
                         }
-
-                        line = line.Replace(";","");
+                        else
+                        {
+                            line = line.Replace(";", "");
+                        }
 
                         string[] splitLine = line.Split(':');
 
@@ -49,17 +58,26 @@ namespace FullAdder.Services
                             throw new Exception("Error on line " + lineNumber + ", expected 1 ':' got " + (splitLine.Length - 1) + ".");
                         }
 
-
                         output = processNode(output, splitLine[0], splitLine[1]);
-
-
                     }
                 }
+            }
+
+            if (!output.checkCircuit())
+            {
+                throw new Exception("circuit not valid!");
             }
 
             return output;
         }
 
+        /// <summary>
+        /// Proceses a node name with parameters into a Circuit
+        /// </summary>
+        /// <param name="circuit">The circuit the node should be added to (or already exist in)</param>
+        /// <param name="nodeName">The name of the node to add.</param>
+        /// <param name="parameter">The parameters. Either the node type or names of nodes to connect to.</param>
+        /// <returns></returns>
         private static Circuit processNode(Circuit circuit, string nodeName, string parameter)
         {
             if (circuit.hasNode(nodeName))

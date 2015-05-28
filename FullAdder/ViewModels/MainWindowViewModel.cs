@@ -12,6 +12,20 @@ namespace FullAdder.ViewModels
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
+        private bool loading = false;
+        public bool Loading 
+        { 
+            get
+            {
+                return loading;
+            }
+            set
+            {
+                loading = value;
+                NotifyInputChanged();
+            }
+        }
+
         private static MainWindowViewModel instance;
         public static MainWindowViewModel Instance
         {

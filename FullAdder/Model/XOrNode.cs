@@ -9,20 +9,16 @@ namespace FullAdder.Model
 {
     class XOrNode : Node
     {
-        public override bool Value
-        {
-            get
-            {
-                bool[] inputs = getInputs();
-
-                return inputs[0] ^ inputs[1];
-            }
-            set { }
-        }
-
         public XOrNode()
         {
             maxInputs = 2;
+        }
+
+        public override bool calculateInput()
+        {
+            bool[] inputs = getInputs();
+
+            return inputs[0] ^ inputs[1];
         }
 
         public static void registerSelf()

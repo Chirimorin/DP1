@@ -9,20 +9,16 @@ namespace FullAdder.Model
 {
     public class NotNode : Node
     {
-        public override bool Value
-        {
-            get 
-            {
-                bool[] inputs = getInputs();
-
-                return !inputs[0];
-            }
-            set { }
-        }
-
         public NotNode()
         {
             maxInputs = 1;
+        }
+
+        public override bool calculateInput()
+        {
+            bool[] inputs = getInputs();
+
+            return !inputs[0];
         }
 
         public static void registerSelf()
