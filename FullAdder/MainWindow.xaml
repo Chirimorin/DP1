@@ -21,6 +21,11 @@
         <Label Content="Inputs" Grid.Column="0" Grid.Row="1" />
         <Label Content="Outputs" Grid.Column="1" Grid.Row="1" />
         <ListBox Name="Inputs" ItemsSource="{Binding Inputs}" Grid.Column="0" Grid.Row="2">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="Focusable" Value="False"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <CheckBox Name="Checkbox" Content="{Binding Name}" 
@@ -29,6 +34,11 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <ListBox Name="Outputs" ItemsSource="{Binding Outputs}" Grid.Column="1" Grid.Row="2">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="Focusable" Value="False"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <CheckBox Name="Checkbox" Content="{Binding Name}" 
