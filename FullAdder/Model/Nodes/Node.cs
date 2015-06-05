@@ -1,4 +1,4 @@
-﻿using FullAdder.ViewModels;
+﻿using CircuitSimulator.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullAdder.Model
+namespace CircuitSimulator.Model
 {
     public abstract class Node : INotifyPropertyChanged
     {

@@ -1,7 +1,7 @@
-﻿using FullAdder.Factory;
-using FullAdder.Model;
-using FullAdder.Services;
-using FullAdder.ViewModels;
+﻿using CircuitSimulator.Factory;
+using CircuitSimulator.Model;
+using CircuitSimulator.Services;
+using CircuitSimulator.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullAdder.Controller
+namespace CircuitSimulator.Controller
 {
     public class MainController
     {

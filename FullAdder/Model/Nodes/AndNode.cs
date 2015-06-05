@@ -1,11 +1,11 @@
-﻿using FullAdder.Factory;
+﻿using CircuitSimulator.Factory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullAdder.Model
+namespace CircuitSimulator.Model
 {
     public class AndNode : Node
     {

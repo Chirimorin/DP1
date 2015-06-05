@@ -1,6 +1,6 @@
-﻿using FullAdder.Controller;
-using FullAdder.Factory;
-using FullAdder.Model;
+﻿using CircuitSimulator.Controller;
+using CircuitSimulator.Factory;
+using CircuitSimulator.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace FullAdder.Services
+namespace CircuitSimulator.Services
 {
     public abstract class FileService
     {

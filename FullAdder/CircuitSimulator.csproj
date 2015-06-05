@@ -7,7 +7,7 @@
     <ProjectGuid>{F76F9172-2126-4D1C-9FFF-FA0955305083}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FullAdder</RootNamespace>
+    <RootNamespace>CircuitSimulator</RootNamespace>
     <AssemblyName>FullAdder</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

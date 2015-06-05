@@ -1,5 +1,5 @@
-﻿using FullAdder.Controller;
-using FullAdder.ViewModels;
+﻿using CircuitSimulator.Controller;
+using CircuitSimulator.ViewModels;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FullAdder
+namespace CircuitSimulator
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
