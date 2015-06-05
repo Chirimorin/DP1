@@ -53,16 +53,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\AndNode.cs" />
-    <Compile Include="Model\InputNode.cs" />
-    <Compile Include="Model\NAndNode.cs" />
-    <Compile Include="Model\Node.cs" />
-    <Compile Include="Model\NOrNode.cs" />
-    <Compile Include="Model\NotNode.cs" />
-    <Compile Include="Model\OrNode.cs" />
-    <Compile Include="Model\OutputNode.cs" />
+    <Compile Include="Model\Nodes\AndNode.cs" />
+    <Compile Include="Model\Nodes\InputNode.cs" />
+    <Compile Include="Model\Nodes\NAndNode.cs" />
+    <Compile Include="Model\Nodes\Node.cs" />
+    <Compile Include="Model\Nodes\NOrNode.cs" />
+    <Compile Include="Model\Nodes\NotNode.cs" />
+    <Compile Include="Model\Nodes\OrNode.cs" />
+    <Compile Include="Model\Nodes\OutputNode.cs" />
     <Compile Include="Model\Circuit.cs" />
-    <Compile Include="Model\XOrNode.cs" />
+    <Compile Include="Model\Nodes\XOrNode.cs" />
     <Compile Include="Services\FileService.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Page Include="MainWindow.xaml">
