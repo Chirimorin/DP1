@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircuitSimulator", "FullAdder\CircuitSimulator.csproj", "{F76F9172-2126-4D1C-9FFF-FA0955305083}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircuitSimulator.Tests", "CircuitSimulatorTests\CircuitSimulatorTests\CircuitSimulator.Tests.csproj", "{08C193D3-6FF8-4ED0-8DF5-8E7E42BF1649}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircuitSimulator.Tests", "CircuitSimulator.Tests\CircuitSimulator.Tests.csproj", "{93ED93E7-1B2B-4B57-B517-91B0613EC148}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{F76F9172-2126-4D1C-9FFF-FA0955305083}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F76F9172-2126-4D1C-9FFF-FA0955305083}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F76F9172-2126-4D1C-9FFF-FA0955305083}.Release|Any CPU.Build.0 = Release|Any CPU
-		{08C193D3-6FF8-4ED0-8DF5-8E7E42BF1649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08C193D3-6FF8-4ED0-8DF5-8E7E42BF1649}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08C193D3-6FF8-4ED0-8DF5-8E7E42BF1649}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08C193D3-6FF8-4ED0-8DF5-8E7E42BF1649}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93ED93E7-1B2B-4B57-B517-91B0613EC148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93ED93E7-1B2B-4B57-B517-91B0613EC148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93ED93E7-1B2B-4B57-B517-91B0613EC148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93ED93E7-1B2B-4B57-B517-91B0613EC148}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CircuitSimulator.Model
 {
-    class NAndNode : Node
+    public class NAndNode : Node
     {
         public NAndNode()
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CircuitSimulator.Model
 {
-    class NOrNode : Node
+    public class NOrNode : Node
     {
         public NOrNode()
         {

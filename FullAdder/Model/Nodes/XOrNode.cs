@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CircuitSimulator.Model
 {
-    class XOrNode : Node
+    public class XOrNode : Node
     {
         public XOrNode()
         {
