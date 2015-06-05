@@ -26,10 +26,11 @@ namespace FullAdder.Model
                     {
                         visited = true;
                         value = calculateInput();
-                        if (!IsValid)
-                            return null;
                     }
                 }
+
+                if (!IsValid)
+                    return null;
 
                 return (bool)value;
             } 
