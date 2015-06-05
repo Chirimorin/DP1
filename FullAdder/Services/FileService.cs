@@ -63,11 +63,6 @@ namespace CircuitSimulator.Services
                 }
             }
 
-            if (!output.checkCircuit())
-            {
-                throw new Exception("circuit not valid!");
-            }
-
             return output;
         }
 
