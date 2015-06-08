@@ -40,7 +40,6 @@ namespace CircuitSimulator.Tests
             Node node3 = new NotNode();
 
             // Connect the circuit
-
             output.addInput(node1);
 
             node1.addInput(node2);
@@ -57,7 +56,7 @@ namespace CircuitSimulator.Tests
             Assert.AreEqual(false, output.Value);
 
             input1.Value = false;
-
+            input2.Value = true;
             // node 2: false || true = true
             // node 3: !false = true
             // node 1: true && true = true
@@ -65,14 +64,13 @@ namespace CircuitSimulator.Tests
 
             input1.Value = true;
             input2.Value = false;
-
             // node 2: true || false = true
             // node 3: !true = false
             // node 1: true && false = false
             Assert.AreEqual(false, output.Value);
 
             input1.Value = false;
-
+            input2.Value = false;
             // node 2: false || false = false
             // node 3: !false = true
             // node 1: false && true = false 
@@ -89,6 +87,7 @@ namespace CircuitSimulator.Tests
             Node node2 = new OrNode();
             Node output = new OutputNode();
 
+            // Connect node 1 and 2 to each other. Both expect only 1 input.
             output.addInput(node1);
             node1.addInput(node2);
             node2.addInput(node1);
@@ -106,6 +105,7 @@ namespace CircuitSimulator.Tests
             Node input = new InputHigh();
             Node output = new OutputNode();
 
+            // Connect only 1 input to node, it expects 2.
             output.addInput(node);
             node.addInput(input);
 
