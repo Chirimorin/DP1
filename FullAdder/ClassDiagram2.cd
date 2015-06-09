@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CircuitSimulator.Controller.MainController" Collapsed="true">
+    <Position X="6.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAABAAEAAQAAAAAEAAAA=</HashCode>
+      <FileName>Controller\MainController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="currentCircuit" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CircuitSimulator.Factory.NodeFactory" Collapsed="true">
+    <Position X="10.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAgAAAAAAIAAAEAAAAAIAA=</HashCode>
+      <FileName>Factory\NodeFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitSimulator.Model.AndNode" Collapsed="true">
+    <Position X="2.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Model\Nodes\AndNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitSimulator.Model.InputNode" Collapsed="true">
+    <Position X="2.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAoAAAAAAA=</HashCode>
+      <FileName>Model\Nodes\InputNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitSimulator.Model.InputHigh" Collapsed="true">
+    <Position X="1.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Nodes\InputNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitSimulator.Model.InputLow" Collapsed="true">
+    <Position X="3.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Nodes\InputNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitSimulator.Model.NAndNode" Collapsed="true">
+    <Position X="2.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Model\Nodes\NAndNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitSimulator.Model.Node" Collapsed="true">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAEAAAAACIACAAgAgAQAkAAIBDAAAAAoAAAAAAA=</HashCode>
+      <FileName>Model\Nodes\Node.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CircuitSimulator.Model.NOrNode" Collapsed="true">
+    <Position X="2.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Model\Nodes\NOrNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitSimulator.Model.NotNode" Collapsed="true">
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Model\Nodes\NotNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitSimulator.Model.OrNode" Collapsed="true">
+    <Position X="2.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Model\Nodes\OrNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitSimulator.Model.OutputNode" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAACAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Model\Nodes\OutputNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CircuitSimulator.Model.XOrNode" Collapsed="true">
+    <Position X="2.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Model\Nodes\XOrNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitSimulator.Model.Circuit" Collapsed="true">
+    <Position X="6.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAgAIAAAIAA=</HashCode>
+      <FileName>Model\Circuit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitSimulator.Services.FileService" Collapsed="true">
+    <Position X="8.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\FileService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitSimulator.ViewModels.MainWindowViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAgQEAAAAAIAAAAAgAIEAkADAABAAQAAAAAQAAAI=</HashCode>
+      <FileName>ViewModels\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

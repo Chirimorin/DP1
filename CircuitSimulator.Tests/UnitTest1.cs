@@ -75,6 +75,8 @@ namespace CircuitSimulator.Tests
             // node 3: !false = true
             // node 1: false && true = false 
             Assert.AreEqual(false, output.Value);
+
+            Assert.AreEqual(true, output.IsValid);
         }
 
         /// <summary>
@@ -93,6 +95,7 @@ namespace CircuitSimulator.Tests
             node2.addInput(node1);
 
             Assert.AreEqual(null, output.Value);
+            Assert.AreEqual(false, output.IsValid);
         }
 
         /// <summary>
@@ -110,6 +113,7 @@ namespace CircuitSimulator.Tests
             node.addInput(input);
 
             Assert.AreEqual(null, output.Value);
+            Assert.AreEqual(false, output.IsValid);
         }
 
         /// <summary>
